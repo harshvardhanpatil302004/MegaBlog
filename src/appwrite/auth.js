@@ -25,12 +25,12 @@ async createAccount({email, password,name}){
     }
 }
 
-async login({email, password}){
-    try {
-        return await this.account.createEmailSessions(email, password);
-    } catch (error) {
-        throw error;
-    }
+async login({ email, password }) {
+  try {
+    return await this.account.createEmailPasswordSession({ email, password });
+  } catch (error) {
+    throw error;
+  }
 }
 
 async getCurrentUser(){
